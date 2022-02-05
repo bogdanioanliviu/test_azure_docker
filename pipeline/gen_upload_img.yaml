@@ -1,0 +1,17 @@
+trigger:
+- main
+
+pool:
+  - name:  default
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'my_dockerHub'
+    repository: 'py_test'
+    command: 'buildAndPush'
+    Dockerfile: '**/code/dockerfile'
+    buildContext: '**/code'
