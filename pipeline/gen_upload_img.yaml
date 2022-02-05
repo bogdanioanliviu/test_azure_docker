@@ -14,4 +14,3 @@ steps:
     repository: 'py_test'
     command: 'buildAndPush'
     Dockerfile: '**/code/dockerfile'
-    buildContext: '**/code'
